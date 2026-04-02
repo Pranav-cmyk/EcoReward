@@ -38,6 +38,10 @@ form {
     gap: 0.4em;
 }
 
+label {
+    margin-bottom: 0px;
+}
+
 input {
     border: 1px solid lightgray;
     font-size: 1em;
@@ -47,16 +51,14 @@ input {
     margin-bottom: 1.2em;
 }
 
-label {
-    margin-bottom: 0px;
-}
-
 input:hover,
 input:focus {
     cursor: pointer;
     box-shadow: 0 0 10px #e9edc9;
     transition: box-shadow 0.2s ease-in-out;
 }
+
+/* Button Styles */
 
 .btn {
     cursor: pointer;
