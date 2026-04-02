@@ -9,24 +9,68 @@
             rel="stylesheet"
         />
 
+        <!--CDN Icons-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
         <!-- Stylesheets -->
         <link
             rel="stylesheet"
             type="text/css"
             href="{{ url_for('static', path = 'css/base.css') }}"
         />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static', path = 'css/auth.css') }}"
-        />
+        {% block stylesheets %} {% endblock %}
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="data:," />
         <title>EcoReward</title>
     </head>
     <body>
+        <header>
+            <h3 class="header-title">Welcome Back, {{user.username}}</h3>
+            <nav>
+                <a href="#">
+                    <img
+                        class="header-notification-icon"
+                        src="{{ url_for('public', path = 'icons/header-bell.png') }}"
+                        alt="Notifications"
+                    />
+                </a>
+            </nav>
+        </header>
         {% block content %} {% endblock %}
+        <footer>
+            <div class="footer-home-page">
+                <a href="#">
+                    <i class="fa-regular fa-house"></i>
+                    <p>Home</p>
+                </a>
+            </div>
+            <div class="footer-upload-page">
+                <a href="#">
+                    <i class="fa-solid fa-upload"></i>
+                    <p>Upload</p>
+                </a>
+            </div>
+            <div class="footer-pickup-page">
+                <a href="#">
+                    <i class="fa-regular fa-truck"></i>
+                    <p>Pickup</p>
+                </a>
+            </div>
+            <div class="footer-profile-page">
+                <a href="#">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Profile</p>
+                </a>
+            </div>
+        </footer>
     </body>
 
     <!-- Scripts -->

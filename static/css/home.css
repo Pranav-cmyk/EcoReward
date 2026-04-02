@@ -1,0 +1,432 @@
+body {
+    background-color: var(--home-background-color);
+}
+
+main {
+    padding: 1.2em;
+}
+
+/* Base Typography */
+
+h3 {
+    color: var(--home-primary-color);
+    font-weight: 550;
+    font-size: 1.35em;
+}
+
+/* Base Styles */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em;
+    border-radius: 5px;
+
+    box-shadow: 0 0 5px lightgray;
+}
+
+.header-notification-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Impact Section */
+
+.impact-section-container {
+    margin: 0;
+}
+
+.impact-details-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: var(--home-impact-primary-gradient);
+    border-radius: 2em;
+    gap: 1em;
+    padding: 2em 1.5em 2em 0.8em;
+}
+
+.impact-details h4,
+.impact-details h1,
+p,
+span,
+i {
+    color: white;
+}
+
+.impact-details {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em;
+    gap: 6px;
+}
+
+.impact-heading,
+.impact-points-wrapper {
+    align-self: flex-start;
+}
+
+.impact-heading {
+    font-size: 0.65em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.impact-number {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.2em;
+    font-family: "Plus Jakarta Sans";
+    font-size: 2.8em;
+    font-weight: 750;
+}
+
+.impact-number-suffix {
+    padding-bottom: 0.5em;
+    font-size: 0.4em;
+    font-weight: 400;
+}
+
+.impact-points-wrapper {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 0.5em;
+    padding: 0.25em 0.8em;
+    border-radius: 15px;
+}
+
+.impact-points {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.impact-icon {
+    scale: 1.3;
+    padding: 2.5em 0 0 1em;
+    align-self: flex-end;
+}
+
+/* Feature Section */
+
+.feature-section-container {
+    padding: 1.5em 0.5em;
+}
+
+.feature-section-intro {
+    margin-bottom: 1em;
+}
+
+.feature-wrapper {
+    display: flex;
+    gap: 2.4em;
+}
+
+.video-feature,
+.pickup-feature {
+    padding: 1.5em 1.5em 2em 1.5em;
+    background-color: var(--feature-background-color);
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 0 5px lightgray;
+}
+
+.video-feature:hover,
+.pickup-feature:hover {
+    scale: 1.05;
+    transition: scale 0.4s ease-in-out;
+}
+
+.pickup-feature h3,
+.pickup-feature p,
+.video-feature h3,
+.video-feature p {
+    color: var(--secondary-font-color);
+}
+
+.pickup-feature-title,
+.video-feature-title {
+    font-weight: 525;
+    line-height: 1.2;
+}
+
+.pickup-feature-description,
+.video-feature-description {
+    font-weight: 350;
+    line-height: 1.5;
+}
+
+.video-feature-details,
+.pickup-feature-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.video-feature-icon,
+.pickup-feature-icon {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 1.65em;
+    padding: 0.25em 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 18px;
+}
+
+.video-feature-icon {
+    background: var(--feature-video-icon-background);
+}
+
+.video-feature-icon i {
+    color: var(--feature-video-icon-color);
+}
+
+.pickup-feature-icon {
+    background: var(--feature-pickup-icon-background);
+}
+
+.pickup-feature-icon i {
+    color: var(--feature-pickup-icon-color);
+}
+
+.pickup-feature-icon a i:hover,
+.video-feature-icon a i:hover {
+    scale: 1.05;
+    transition: scale 0.2s ease-in-out;
+}
+
+/* Progress Bar */
+
+.progress-section-wrapper {
+    background-color: whitesmoke;
+    padding: 2em 1.5em;
+    border-radius: 1em;
+    box-shadow: 1px 1px 5px lightgray;
+}
+
+.progress-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.progress-section-title {
+    color: var(--secondary-font-color);
+}
+
+.progress-section-percent {
+    color: var(--home-primary-color);
+    font-weight: 450;
+}
+
+.progress-bar-container {
+    padding: 1em 0;
+}
+
+.progress-bar,
+.progress-bar-shadow {
+    height: 1.6em;
+    border-radius: 1em;
+}
+
+.progress-bar-shadow {
+    background-color: var(--feature-background-color);
+}
+
+.progress-bar {
+    background: var(--home-impact-primary-gradient);
+    width: 0%; /* Start at 0 */
+    transition: width 2s ease-in-out; /* Smooth 2-second animation */
+}
+
+.progress-section-description {
+    color: var(--secondary-font-color);
+    font-size: 0.9em;
+    font-weight: 350;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+}
+
+/* History */
+.history-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+.history-section-title {
+    color: var(--secondary-font-color);
+}
+
+.history-section-view-all {
+    cursor: pointer;
+    color: var(--home-primary-color);
+    font-weight: 450;
+    letter-spacing: 1px;
+}
+
+.history-section-view-all:hover {
+    scale: 1.1;
+    transition: scale 0.3s ease-in-out;
+}
+
+.history-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.history-item {
+    display: flex;
+    background-color: var(--history-items-background-color);
+    padding: 1em;
+    border-radius: 1em;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.history-item-icon-bg {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 2px lightgray;
+    border-radius: 50%;
+}
+
+.history-item-icon-bg i {
+    color: var(--home-primary-color);
+    font-size: 1.2em;
+}
+
+.history-item-icon {
+    color: var(--home-primary-color);
+}
+
+.history-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.history-item-details-title {
+    color: var(--secondary-font-color);
+    font-size: 1.15em;
+    font-weight: 550;
+}
+
+.history-item-details-description {
+    color: var(--home-primary-color);
+    font-size: 0.9em;
+    font-weight: 450;
+}
+
+.history-item-timestamp {
+    align-self: center;
+    font-size: 0.9em;
+    font-weight: 350;
+}
+
+.history-item-timestamp-text {
+    color: var(--secondary-font-color);
+}
+
+.history-remaining-items {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+        max-height 1s ease-in,
+        opacity 0.5s ease;
+}
+
+.history-remaining-items-expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+@media (max-width: 370px) {
+    .feature-wrapper {
+        flex-direction: column;
+    }
+
+    .progress-section-percent {
+        font-size: 0.95em;
+    }
+
+    .history-item-icon-bg {
+        width: 72px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .history-item-details-title {
+        font-size: 1em;
+    }
+
+    .history-item-details-description {
+        font-size: 0.75em;
+    }
+
+    .impact-points-wrapper {
+        width: fit-content;
+        padding: 0.25em 0.25em 0.25em 0.45em;
+    }
+    .impact-points i {
+        padding-top: 0.3em;
+        align-self: flex-start;
+    }
+}
+
+/* Footer Styles */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px lightgray;
+    padding: 1.25em 0;
+}
+
+footer div a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+}
+footer div a i,
+footer div a p {
+    color: var(--secondary-font-color);
+}
+
+footer div a:hover,
+footer div a:focus {
+    scale: 1.1;
+    transition: scale 0.3s ease;
+}

@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
 
-  if (!signupForm) {
-    console.log("signup-form not found");
-    return;
-  }
-
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(signupForm);

@@ -1,2 +1,1 @@
-from .auth import authRouter
 from .home import homeRouter

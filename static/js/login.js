@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (response.ok) {
       console.log("User Successfully Authenticated, Redirecting to Home Page");
-      window.location.href = "/";
+      window.location.href = "/home/";
     } else {
       const errorData = await response.json();
       console.log("Authentication Failed, Please Try Again: ", errorData);

@@ -1,6 +1,24 @@
 :root {
     --primary-font: "Poppins";
     --primary-font-color: #666666;
+    --secondary-font-color: #2c2f2e;
+
+    --home-background-color: #eff1ef;
+    --home-primary-color: #006a28;
+    --home-impact-primary-gradient: linear-gradient(
+        -144deg,
+        #5cfd80 0%,
+        #006a28 100%
+    );
+
+    --feature-background-color: rgba(231, 236, 239, 0.25);
+    --history-items-background-color: rgba(183, 228, 199, 0.5);
+
+    --feature-video-icon-color: #004c71;
+    --feature-video-icon-background: rgba(167, 215, 255, 0.3);
+
+    --feature-pickup-icon-color: #00534d;
+    --feature-pickup-icon-background: rgba(127, 230, 219, 0.6);
 }
 
 * {
