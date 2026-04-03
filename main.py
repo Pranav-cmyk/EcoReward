@@ -8,12 +8,15 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/public", StaticFiles(directory="public"), name="public")
 templates = Jinja2Templates(directory="./templates")
 
-from routers import authRouter, homeRouter
+from routers import authRouter, homeRouter, videoRouter
 
 app.include_router(authRouter)
 app.include_router(homeRouter)
+app.include_router(videoRouter)
 
 
 @app.get("/")
 async def root():
     return RedirectResponse(url="/home/")
+
+

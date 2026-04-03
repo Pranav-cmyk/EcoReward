@@ -6,36 +6,7 @@ main {
     padding: 1.2em;
 }
 
-/* Base Typography */
-
-h3 {
-    color: var(--home-primary-color);
-    font-weight: 550;
-    font-size: 1.35em;
-}
-
 /* Base Styles */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2em;
-    border-radius: 5px;
-
-    box-shadow: 0 0 5px lightgray;
-}
-
-.header-notification-icon:hover {
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    padding-bottom: 4px;
-}
 
 img {
     height: 100%;
@@ -139,6 +110,7 @@ i {
 
 .video-feature,
 .pickup-feature {
+    cursor: pointer;
     padding: 1.5em 1.5em 2em 1.5em;
     background-color: var(--feature-background-color);
     border-radius: 12px;
@@ -408,33 +380,4 @@ i {
         padding-top: 0.3em;
         align-self: flex-start;
     }
-}
-
-/* Footer Styles */
-
-footer {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0.5em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 5px lightgray;
-    padding: 1.25em 0;
-}
-
-footer div a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2em;
-}
-footer div a i,
-footer div a p {
-    color: var(--secondary-font-color);
-}
-
-footer div a:hover,
-footer div a:focus {
-    scale: 1.1;
-    transition: scale 0.3s ease;
 }

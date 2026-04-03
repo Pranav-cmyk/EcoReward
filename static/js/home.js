@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const percentText = document.querySelector(".progress-section-percent");
   const historyRemaining = document.getElementById("remaining-history-items");
   const viewAllButton = document.getElementById("history-section-view-all-btn");
+  const videoFeatureDiv = document.getElementById("video-feature");
+
 
   if (progressBar && percentText) {
     const targetPercent = parseInt(percentText.innerText) || 0;
@@ -24,4 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       viewAllButton.textContent = "View All";
     }
   });
+
+  videoFeatureDiv.addEventListener('click', () => {
+    window.location.href = "/video/"
+  });
+
 });

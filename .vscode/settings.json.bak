@@ -1,0 +1,17 @@
+{
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.inlineSuggest.enabled": true,
+    "editor.unicodeHighlight.nonBasicASCIICharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "files.associations": {
+        "*.html": "jinja-html"
+    },
+    "postman.settings.dotenv-detection-notification-visibility": false
+}

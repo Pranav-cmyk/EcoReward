@@ -19,6 +19,11 @@ section {
     margin-bottom: 20px;
 }
 
+.signup-header h3, 
+.login-header h3 {
+    color: var(--secondary-font-color);
+}
+
 .signup-circle,
 .login-circle {
     width: 50px;
