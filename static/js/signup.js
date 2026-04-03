@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
+  const errorMessage = document.getElementById("error-message-div");
 
   if (!signupForm) {
     console.log("signup-form not found");
@@ -20,12 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify({ username, password }),
     });
 
-    if (response.ok) {
+    const data = await response.json();
+
+    if (response.ok && data.status === "success") {
       console.log("User Successfully Created, Redirecting to Login");
       window.location.href = "/auth/login";
     } else {
-      const errorData = await response.json();
-      console.log("Signup Failed, Please Try Again: ", errorData);
+      console.log("Signup Failed, Please Try Again: ", data.message);
+      errorMessage.classList.add("error-message-show");
     }
   });
 });

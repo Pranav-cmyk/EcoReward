@@ -7,7 +7,7 @@ section {
 
 .signup-form-wrapper,
 .login-form-wrapper {
-    width: 50vw;
+    width: 70vw;
     margin: 0 auto;
 }
 
@@ -19,10 +19,27 @@ section {
     margin-bottom: 20px;
 }
 
+.signup-header h3, 
+.login-header h3 {
+    color: var(--secondary-font-color);
+}
+
 .signup-circle,
 .login-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: #c4c4c4;
+}
+
+.error-message {
+    opacity: 0;
+    color: red;
+    font-size: 1em;
+    margin-top: 1em;
+    transition: opacity 0.15s ease-in;
+}
+
+.error-message-show {
+    opacity: 1;
 }

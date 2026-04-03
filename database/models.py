@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import JSON, Column, Integer, String
 
 from .database import Base
 
@@ -9,3 +9,7 @@ class Users(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
     hashedPassword = Column(String)
+    points = Column(Integer, default=0)
+    currentPoints = Column(Integer, default=0)
+    weeklyGoalPercent = Column(Integer, default=0)
+    history = Column(JSON, default=list)

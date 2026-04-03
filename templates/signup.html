@@ -1,4 +1,10 @@
-{% extends 'layout.html' %} {% block content %}
+{% extends 'layout.html' %} {% block stylesheets %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', path = 'css/auth.css') }}"
+/>
+{% endblock %} {% block content %}
 
 <header>
     <nav>
@@ -24,6 +30,9 @@
                 Sign up
             </button>
         </form>
+        <div id="error-message-div" class="error-message">
+            Username already exists
+        </div>
     </div>
 </section>
 {% endblock %} {% block scripts %}

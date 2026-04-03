@@ -1,4 +1,10 @@
-{% extends 'layout.html' %} {% block content %}
+{% extends 'layout.html' %} {% block stylesheets %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', path = 'css/auth.css') }}"
+/>
+{% endblock %} {% block content %}
 
 <header>
     <nav>
@@ -24,8 +30,12 @@
                 Log in
             </button>
         </form>
+        <div class="error-message" id="error-message-div">
+            Invalid Username or Password
+        </div>
     </div>
 </section>
+
 {% endblock %} {% block scripts %}
 <script
     type="module"

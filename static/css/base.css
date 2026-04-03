@@ -1,6 +1,26 @@
 :root {
     --primary-font: "Poppins";
     --primary-font-color: #666666;
+    --secondary-font-color: #2c2f2e;
+
+    --home-background-color: #eff1ef;
+    --home-primary-color: #006a28;
+    --home-secondary-color: #5cfd80;
+    --home-impact-primary-gradient: linear-gradient(
+        -144deg,
+        #5cfd80 0%,
+        #006a28 100%
+    );
+
+
+    --feature-background-color: rgba(231, 236, 239, 0.25);
+    --history-items-background-color: rgba(183, 228, 199, 0.5);
+
+    --feature-video-icon-color: #004c71;
+    --feature-video-icon-background: rgba(167, 215, 255, 0.3);
+
+    --feature-pickup-icon-color: #00534d;
+    --feature-pickup-icon-background: rgba(127, 230, 219, 0.6);
 }
 
 * {
@@ -11,6 +31,7 @@
     color: var(--primary-font-color);
 }
 
+
 /* Typography */
 
 a {
@@ -18,24 +39,44 @@ a {
 }
 
 h3 {
-    font-size: 2rem;
-    font-weight: 400;
+
+    color: var(--home-primary-color);
+    font-weight: 550;
+    font-size: 1.35em;
 }
 
 /* Default styles */
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em;
+    border-radius: 5px;
+
+    box-shadow: 0 0 5px lightgray;
+}
+
+.header-notification-icon:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
 nav {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 1em;
-    padding: 1em;
+    margin-top: 4px;
 }
+
 
 form {
     display: flex;
     flex-direction: column;
     gap: 0.4em;
+}
+
+label {
+    margin-bottom: 0px;
 }
 
 input {
@@ -47,16 +88,14 @@ input {
     margin-bottom: 1.2em;
 }
 
-label {
-    margin-bottom: 0px;
-}
-
 input:hover,
 input:focus {
     cursor: pointer;
     box-shadow: 0 0 10px #e9edc9;
     transition: box-shadow 0.2s ease-in-out;
 }
+
+/* Button Styles */
 
 .btn {
     cursor: pointer;
@@ -73,4 +112,33 @@ input:focus {
 .btn,
 input {
     padding: 0.6em;
+}
+
+/* Footer Styles */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px lightgray;
+    padding: 1.25em 0;
+}
+
+footer div a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+}
+footer div a i,
+footer div a p {
+    color: var(--secondary-font-color);
+}
+
+footer div a:hover,
+footer div a:focus {
+    scale: 1.1;
+    transition: scale 0.3s ease;
 }

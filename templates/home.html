@@ -1,34 +1,153 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <!-- Several Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-            rel="stylesheet"
-        />
+{% extends 'layout.html' %} {% block stylesheets %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', path = 'css/home.css') }}"
+/>
+{% endblock %} {% block content %}
 
-        <!-- Stylesheets -->
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static', path = 'css/base.css') }}"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static', path = 'css/auth.css') }}"
-        />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="data:," />
-        <title>EcoReward</title>
-    </head>
-    <body>
-        {% block content %} {% endblock %}
-    </body>
+<main>
+    <section class="impact-section-container">
+        <div class="impact-details-wrapper">
+            <div class="impact-details">
+                <h4 class="impact-heading">Total Impact</h4>
+                <h1 class="impact-number">
+                    {{user.points}}
+                    <span class="impact-number-suffix"> pts </span>
+                </h1>
+                <div class="impact-points-wrapper">
+                    <div class="impact-points">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <p>+{{user.currentPoints}} Today</p>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-icon">
+                <img
+                    src="{{ url_for('public', path = 'icons/impact-icon.png') }}"
+                    alt="Impact Icon"
+                />
+            </div>
+        </div>
+    </section>
 
-    <!-- Scripts -->
-    {% block scripts %} {% endblock %}
-</html>
+    <section class="feature-section-container">
+        <h3 class="feature-section-intro">What's on Your Mind?</h3>
+        <div class="feature-wrapper">
+            <div class="video-feature" id="video-feature">
+                <div class="video-feature-details">
+                    <div class="video-feature-icon">
+                        <i class="fa-regular fa-camera"></i>
+                    </div>
+                    <h3 class="video-feature-title">Log Video</h3>
+                    <p class="video-feature-description">
+                        Earn Points by Verifying waste
+                    </p>
+                </div>
+            </div>
+            <div class="pickup-feature">
+                <div class="pickup-feature-details" id="pickup-feature">
+                    <div class="pickup-feature-icon">
+                        <i class="fa-regular fa-truck"></i>
+                    </div>
+                    <h3 class="pickup-feature-title">
+                        Schedule <br />
+                        Pickup
+                    </h3>
+                    <p class="pickup-feature-description">
+                        Book a Collector at your door
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="progress-section-container">
+        <div class="progress-section-wrapper">
+            <div class="progress-section-header">
+                <h3 class="progress-section-title">Weekly Goal</h3>
+                <h4 class="progress-section-percent">
+                    {{user.weeklyGoalPercent}}% Achieved
+                </h4>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-shadow">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <p class="progress-section-description">
+                You've saved approximately 12kg of waste from landfills this
+                week. Keep going!
+            </p>
+        </div>
+    </section>
+
+    <section class="history-section">
+        <div class="history-section-wrapper">
+            <div class="history-section-header">
+                <h3 class="history-section-title">Recent Activity</h3>
+                <h4
+                    class="history-section-view-all"
+                    id="history-section-view-all-btn"
+                >
+                    View All
+                </h4>
+            </div>
+
+            {% if user.history %}
+            <div class="history-items">
+                <div class="history-item">
+                    <div class="history-item-icon-bg">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <div class="history-item-details">
+                        <h4 class="history-item-details-title">
+                            {{user.history[0].title}}
+                        </h4>
+                        <p class="history-item-details-description">
+                            {{user.history[0].description}}
+                        </p>
+                    </div>
+                    <div class="history-item-timestamp">
+                        <p class="history-item-timestamp-text">
+                            {{user.history[0].timestamp}}
+                        </p>
+                    </div>
+                </div>
+                {% else %}
+                <p class="history-empty">No history yet.</p>
+                {% endif %}
+                <!--Hide Remaining -->
+                <div
+                    class="history-remaining-items"
+                    id="remaining-history-items"
+                >
+                    {% for item in user.history[1:] %}
+                    <div class="history-item">
+                        <div class="history-item-icon-bg">
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+                        <div class="history-item-details">
+                            <h4 class="history-item-details-title">
+                                {{item.title}}
+                            </h4>
+                            <p class="history-item-details-description">
+                                {{item.description}}
+                            </p>
+                        </div>
+                        <div class="history-item-timestamp">
+                            <p class="history-item-timestamp-text">
+                                {{item.timestamp}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %} {% block scripts %}
+<script type="module" src="{{url_for('static', path = 'js/home.js')}}"></script>
+{% endblock %}
