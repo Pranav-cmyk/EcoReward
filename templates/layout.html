@@ -32,8 +32,9 @@
         <title>EcoReward</title>
     </head>
     <body>
+        {% if user %}
         <header>
-            <h3 class="header-title">Welcome Back, {{user.username}}</h3>
+            <h3 class="header-title">Welcome, {{user.username}}</h3>
             <nav>
                 <a href="#">
                     <img
@@ -44,10 +45,10 @@
                 </a>
             </nav>
         </header>
-        {% block content %} {% endblock %}
+        {% endif %} {% block content %} {% endblock %} {% if user %}
         <footer>
             <div class="footer-home-page">
-                <a href="#">
+                <a href="/home/">
                     <i class="fa-regular fa-house"></i>
                     <p>Home</p>
                 </a>
@@ -71,6 +72,7 @@
                 </a>
             </div>
         </footer>
+        {% endif %}
     </body>
 
     <!-- Scripts -->

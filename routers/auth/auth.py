@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from fastapi import APIRouter, HTTPException, Request, Response, status
+from fastapi.responses import RedirectResponse
 
 from database import Users
 from main import templates
@@ -9,6 +10,7 @@ from ..utils import (
     createAccessToken,
     dbDependency,
     fetchAndAuthenticateUser,
+    getCurrentUser,
     hashPassword,
 )
 from .models import UserModel, responseTokenModel

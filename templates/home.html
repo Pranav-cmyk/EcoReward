@@ -37,9 +37,7 @@
             <div class="video-feature" id="video-feature">
                 <div class="video-feature-details">
                     <div class="video-feature-icon">
-                        <a href="#">
-                            <i class="fa-regular fa-camera"></i>
-                        </a>
+                        <i class="fa-regular fa-camera"></i>
                     </div>
                     <h3 class="video-feature-title">Log Video</h3>
                     <p class="video-feature-description">
@@ -50,9 +48,7 @@
             <div class="pickup-feature">
                 <div class="pickup-feature-details" id="pickup-feature">
                     <div class="pickup-feature-icon">
-                        <a href="#">
-                            <i class="fa-regular fa-truck"></i>
-                        </a>
+                        <i class="fa-regular fa-truck"></i>
                     </div>
                     <h3 class="pickup-feature-title">
                         Schedule <br />
@@ -98,6 +94,7 @@
                 </h4>
             </div>
 
+            {% if user.history %}
             <div class="history-items">
                 <div class="history-item">
                     <div class="history-item-icon-bg">
@@ -117,6 +114,9 @@
                         </p>
                     </div>
                 </div>
+                {% else %}
+                <p class="history-empty">No history yet.</p>
+                {% endif %}
                 <!--Hide Remaining -->
                 <div
                     class="history-remaining-items"

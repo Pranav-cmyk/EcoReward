@@ -26,3 +26,15 @@ section {
     border-radius: 50%;
     background-color: #c4c4c4;
 }
+
+.error-message {
+    opacity: 0;
+    color: red;
+    font-size: 1em;
+    margin-top: 1em;
+    transition: opacity 0.15s ease-in;
+}
+
+.error-message-show {
+    opacity: 1;
+}

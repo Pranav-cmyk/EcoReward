@@ -204,8 +204,8 @@ i {
     color: var(--feature-pickup-icon-color);
 }
 
-.pickup-feature-icon a i:hover,
-.video-feature-icon a i:hover {
+.pickup-feature-icon i:hover,
+.video-feature-icon i:hover {
     scale: 1.05;
     transition: scale 0.2s ease-in-out;
 }
@@ -353,6 +353,14 @@ i {
 
 .history-item-timestamp-text {
     color: var(--secondary-font-color);
+}
+
+.history-empty {
+    color: var(--secondary-font-color);
+    font-size: 1em;
+    font-weight: 350;
+    text-align: center;
+    margin-top: 1em;
 }
 
 .history-remaining-items {

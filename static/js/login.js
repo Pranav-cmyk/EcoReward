@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
+  const errorMessage = document.getElementById("error-message-div");
 
   if (!loginForm) {
     console.log("login-form not found");
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "/home/";
     } else {
       const errorData = await response.json();
-      console.log("Authentication Failed, Please Try Again: ", errorData);
+      errorMessage.classList.add("error-message-show");
     }
   });
 });
