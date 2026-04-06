@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from sqlalchemy import JSON, Column, Integer, String
 
 from .database import Base
@@ -13,3 +14,12 @@ class Users(Base):
     currentPoints = Column(Integer, default=0)
     weeklyGoalPercent = Column(Integer, default=0)
     history = Column(JSON, default=list)
+
+
+class historyModel(BaseModel):
+    title: str
+    description: str
+    timestamp: str
+    logo: str
+    points: int
+   

@@ -1,63 +1,132 @@
 {% extends "layout.html" %} {% block stylesheets %}
 <link
-    rel="stylesheet"
-    type="text/css"
-    href="{{ url_for('static', path='css/video.css') }}"
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', path='css/video.css') }}"
 />
 {% endblock %} {% block content %}
 
-<section class="video-upload-section">
+<main>
+  <section class="video-upload-section">
     <div class="video-upload-form-wrapper">
+      <div class="video-preview-container" id="video-preview-container">
         <form class="video-upload-form" id="video-upload-form">
-            <input
-                type="file"
-                name="video"
-                id="video"
-                accept="video/*"
-                required
-                hidden
-            />
-            <h4>Dispose & Earn</h4>
-            <label for="video">
-                <div class="video-form-display">
-                    <div class="video-form-submit-logo">
-                        <i class="fa-solid fa-file-arrow-up"></i>
-                    </div>
-                    <div class="video-form-description">
-                        <h4 class="video-form-heading">Tap to select</h4>
-                        <div class="video-form-file-wrapper">
-                            <p>MP4 only</p>
-                            <div>
-                                <p>|</p>
-                            </div>
-                            <p>Max 50MB</p>  
-                        </div>
-                    </div>
+          <input
+            type="file"
+            name="video"
+            id="video"
+            accept="video/*"
+            required
+            hidden
+          />
+          <h4
+            class="video-upload-section-heading"
+            id="video-upload-section-heading"
+          >
+            Dispose & Earn
+          </h4>
+          <label for="video">
+            <div class="video-form-display">
+              <div class="video-form-submit-logo">
+                <i class="fa-solid fa-file-arrow-up"></i>
+              </div>
+              <div class="video-form-description">
+                <h4 class="video-form-heading">Tap to select</h4>
+                <div class="video-form-file-wrapper">
+                  <p>MP4 only</p>
+                  <div>
+                    <p>|</p>
+                  </div>
+                  <p>Max 50MB</p>
                 </div>
-            </label>
-        </form>
-    </div>
-</section>
-
-<section class="result-analysis-section">
-    <div class="result-analysis-heading">
-        <h4>AI Analysis Result</h4>
-        <div class="result-analysis-verified-wrapper">
-            <div class="verified-icon-container">
-                <i class="fa-solid fa-certificate dark-green"></i>
-                <i class="fa-solid fa-check lime-green"></i>
+              </div>
             </div>
-            <h5 class="dark-green">VERIFIED DISPOSAL</h5>
+          </label>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="result-analysis-section">
+    <div class="result-analysis-heading">
+      <h4>Results</h4>
+      <div
+        class="result-analysis-verified-wrapper"
+        id="result-analysis-verified-wrapper"
+      >
+        <div class="verified-icon-container">
+          <i class="fa-solid fa-certificate dark-green"></i>
+          <i class="fa-solid fa-check lime-green"></i>
         </div>
+        <h5 class="verified-disposal-text">VERIFIED DISPOSAL</h5>
+      </div>
     </div>
 
+    <div class="result-analysis-body-container">
+      <div class="result-analysis-body">
+        <div class="result-analysis-body-summary">
+          <div class="result-analysis-body-category">
+            <h5 class="result-analysis-body-heading">Waste Category</h5>
+            <div class="result-analysis-body-category-wrapper">
+              <div id="trash-icon-container">
+                <i class="fa-solid fa" id="trash-icon"></i>
+              </div>
+              <h3 id="waste-category"></h3>
+            </div>
+          </div>
+          <div class="result-analysis-body-estimated-weight-wrapper">
+            <h5 class="result-analysis-body-heading">Estimated Weight</h5>
+            <h3 id="estimated-weight"></h3>
+          </div>
+        </div>
 
-    
-</section>
+        <div class="result-analysis-reward-summary">
+          <div><h3>Total Rewards</h3></div>
+          <div>
+            <h4 id="total-rewards"></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="result-analysis-items-section">
+        <div class="result-analysis-body-heading">Items Detected</div>
+        <div class="items-container">
+          <div class="items">
+            <ul class="items-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-submit" id="submit-btn">
+      Confirm & Add to Collection
+    </button>
+
+    <div class="status-div">
+      <p id="status-text" class="status-text"></p>
+    </div>
+  </section>
+
+  <section class="eco-tip-section">
+    <div class="eco-tip-section-wrapper">
+      <div class="eco-icon-container">
+        <i class="fa-regular fa-lightbulb"></i>
+      </div>
+      <div>
+        <h3 class="eco-tip-heading">Eco Tip</h3>
+        <p class="eco-tip-description">
+          Make sure items are clean and dry for maximum reward eligibility
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
 
 {% endblock %} {% block scripts %}
 <script
-    type="module"
-    src="{{url_for('static', path = 'js/video.js')}}"
+  type="module"
+  src="{{url_for('static', path = 'js/video.js')}}"
+  defer
 ></script>
 {% endblock %}

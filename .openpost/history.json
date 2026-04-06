@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1775378845721",
+    "timestamp": 1775378845721,
+    "request": {
+      "id": "1775378845693",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8000",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "none"
+      }
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "content-length": "2489",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 05 Apr 2026 08:47:25 GMT",
+        "server": "uvicorn"
+      },
+      "body": "<!doctype html>\n<html lang=\"en\">\n    <head>\n        <!-- Several Fonts -->\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />\n        <link\n            href=\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap\"\n            rel=\"stylesheet\"\n        />\n\n        <!--CDN Icons-->\n        <link\n            rel=\"stylesheet\"\n            href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css\"\n            integrity=\"sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==\"\n            crossorigin=\"anonymous\"\n            referrerpolicy=\"no-referrer\"\n        />\n\n        <!-- Stylesheets -->\n        <link\n            rel=\"stylesheet\"\n            type=\"text/css\"\n            href=\"http://localhost:8000/static/css/base.css\"\n        />\n        \n<link\n    rel=\"stylesheet\"\n    type=\"text/css\"\n    href=\"http://localhost:8000/static/css/auth.css\"\n/>\n\n\n        <meta charset=\"UTF-8\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n        <link rel=\"icon\" href=\"data:,\" />\n        <title>EcoReward</title>\n    </head>\n    <body>\n         \n\n<header>\n    <nav>\n        <a href=\"http://localhost:8000/auth/signup\">Create an Account</a>\n    </nav>\n</header>\n\n<section>\n    <div class=\"login-form-wrapper\">\n        <div class=\"login-header\">\n            <div class=\"login-circle\"></div>\n            <h3>Log in</h3>\n        </div>\n\n        <form id=\"login-form\">\n            <label for=\"username\">Username</label>\n            <input type=\"text\" name=\"username\" id=\"username\" required />\n\n            <label for=\"password\">Password</label>\n            <input type=\"password\" name=\"password\" id=\"password\" required />\n\n            <button class=\"btn\" id=\"login-submit-btn\" type=\"submit\">\n                Log in\n            </button>\n        </form>\n        <div class=\"error-message\" id=\"error-message-div\">\n            Invalid Username or Password\n        </div>\n    </div>\n</section>\n\n \n    </body>\n\n    <!-- Scripts -->\n    \n<script\n    type=\"module\"\n    src=\"http://localhost:8000/static/js/login.js\"\n></script>\n\n</html>",
+      "time": 22,
+      "size": 2489,
+      "cookies": []
+    }
+  }
+]

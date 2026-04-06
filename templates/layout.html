@@ -1,80 +1,93 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Several Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-            rel="stylesheet"
-        />
+  <head>
+    <!-- Several Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
-        <!--CDN Icons-->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+    <!--CDN Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-        <!-- Stylesheets -->
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static', path = 'css/base.css') }}"
-        />
-        {% block stylesheets %} {% endblock %}
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', path = 'css/base.css') }}"
+    />
+    {% block stylesheets %} {% endblock %}
 
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="data:," />
-        <title>EcoReward</title>
-    </head>
-    <body>
-        {% if user %}
-        <header>
-            <h3 class="header-title">Welcome, {{user.username}}</h3>
-            <nav>
-                <a href="#">
-                    <img
-                        class="header-notification-icon"
-                        src="{{ url_for('public', path = 'icons/header-bell.png') }}"
-                        alt="Notifications"
-                    />
-                </a>
-            </nav>
-        </header>
-        {% endif %} {% block content %} {% endblock %} {% if user %}
-        <footer>
-            <div class="footer-home-page">
-                <a href="/home/">
-                    <i class="fa-regular fa-house"></i>
-                    <p>Home</p>
-                </a>
-            </div>
-            <div class="footer-upload-page">
-                <a href="/video/">
-                    <i class="fa-solid fa-upload"></i>
-                    <p>Upload</p>
-                </a>
-            </div>
-            <div class="footer-pickup-page">
-                <a href="#">
-                    <i class="fa-regular fa-truck"></i>
-                    <p>Pickup</p>
-                </a>
-            </div>
-            <div class="footer-profile-page">
-                <a href="#">
-                    <i class="fa-regular fa-user"></i>
-                    <p>Profile</p>
-                </a>
-            </div>
-        </footer>
-        {% endif %}
-    </body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>EcoReward</title>
+  </head>
+  <body>
+    {% if user %}
+    <header>
+      <h3 class="header-title">Welcome, {{user.username}}</h3>
+      <nav>
+        <a href="#">
+          <img
+            class="header-notification-icon"
+            src="{{ url_for('public', path = 'icons/header-bell.png') }}"
+            alt="Notifications"
+          />
+        </a>
+      </nav>
+    </header>
+    {% endif %} {% block content %} {% endblock %} {% if user %}
+    <footer>
+      <div class="footer-home-page">
+        <a href="/home/">
+          <i class="fa-regular fa-house"></i>
+          <p>Home</p>
+        </a>
+      </div>
+      <div class="footer-upload-page">
+        <a href="/video/">
+          <i class="fa-solid fa-upload"></i>
+          <p>Upload</p>
+        </a>
+      </div>
+      <div class="footer-pickup-page">
+        <a href="#">
+          <i class="fa-regular fa-truck"></i>
+          <p>Pickup</p>
+        </a>
+      </div>
+      <div class="footer-profile-page">
+        <a href="#">
+          <i class="fa-regular fa-user"></i>
+          <p>Profile</p>
+        </a>
+      </div>
+    </footer>
+    {% endif %}
+  </body>
 
-    <!-- Scripts -->
-    {% block scripts %} {% endblock %}
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll("footer div a");
+
+      navLinks.forEach((link) => {
+        // If the link's href matches the current path, highlight it
+        if (link.getAttribute("href") === currentPath) {
+          link.classList.add("active-nav");
+        }
+      });
+    });
+  </script>
+  {% block scripts %} {% endblock %}
 </html>
