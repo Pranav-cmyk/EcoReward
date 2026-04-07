@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 from .models import AnalysisResult
 from .prompts import PROMPT
 
-load_dotenv()
+load_dotenv(".env.local")
 
 api_key = os.environ.get("GOOGLE_API_KEY")
 client = Client(api_key=api_key)
